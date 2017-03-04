@@ -1,7 +1,7 @@
 # ProjectBaseRandomizer
 
 An Item Randomizer for the Super Metroid Romhack called Project Base.
-It's a ramshackle fork from Dessy's original Super Metroid Randomizer program.
+It's a ramshackle fork from Dessy's original Super Metroid Randomizer program, but hey it works.
 
 ----------------------------------------------
 Project Base 0.7.2 Randomizer Changelog
