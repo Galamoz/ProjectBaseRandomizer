@@ -1,5 +1,5 @@
 # Project Base Randomizer
-# Download v1.3: [Project Base 0.7.2 Randomizer v1.3] (https://github.com/Galamoz/ProjectBaseRandomizer/raw/master/Project%20Base%20Randomizer%20v1.3.exe)
+# Download v1.3: [Project Base 0.7.2 Randomizer v1.3] (https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1.3/Project.Base.Randomizer.v1.3.exe)
 
 An Item Randomizer program for the Super Metroid Romhack called Project Base.  
 It's a fork from Dessy's original Super Metroid Randomizer program, that can be found here: https://github.com/Dessyreqt/smrandomizer
