@@ -1,12 +1,23 @@
 # Project Base Randomizer
-# Downloads v1.3: [Project Base 0.7.2 Randomizer v1.3] (https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1.3/Project.Base.Randomizer.v1.3.exe)  
-## [Vanilla Palettes 0.7.2 Edition] (https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/v1.31/Project.Base.Randomizer.v1.3.-.Vanilla.Palettes.exe)
+# Downloads v1.4: [Project Base 0.7.2 Randomizer v1.4] (https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/v1.4/Project.Base.Randomizer.v1.4.exe)  
+### [Vanilla Palettes Edition] (https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/v1.41/Project.Base.Randomizer.v1.4.-.Vanilla.Palettes.exe) for Project Base Randomizer v1.4
+
+
+----------------------------------------------  
 
 An Item Randomizer program for the Super Metroid Romhack called Project Base.  
 It's a fork from Dessy's original Super Metroid Randomizer program, that can be found here: https://github.com/Dessyreqt/smrandomizer
 
 ----------------------------------------------
 # Project Base 0.7.2 Randomizer Changelog
+
+v1.4
+
+	**Bug** Item in Wrecked Ship Attic does not randomize properly until Phantoon is defeated.
+	Fix a specific crash that occured during the Spazer room's room transition.
+	Improved item randomizing logic.
+	Reduced items available in Masochist difficulty to 25 from 29.
+	Reduced items available in Speedrunner difficulty to 47 from 52.
 
 v1.3    
 
