@@ -1,5 +1,5 @@
 # Project Base Randomizer
-# Downloads v1.4: [Project Base 0.7.2 Randomizer v1.5](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1.5/SMPB.Item.Randomizer.v1.5.exe)  
+# Downloads v1.5: [Project Base 0.7.2 Randomizer v1.5](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1.5/SMPB.Item.Randomizer.v1.5.exe)  
 ### [Vanilla Palettes Edition](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1.5a/SMPB.Item.Randomizer.v1.5.-.Vanilla.Palettes.exe) for Project Base 0.7.2 Randomizer v1.5
 
 
