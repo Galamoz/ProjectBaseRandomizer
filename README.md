@@ -1,6 +1,6 @@
 # Project Base Randomizer
-# Downloads v1.4: [Project Base 0.7.2 Randomizer v1.4] (https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/v1.4/Project.Base.Randomizer.v1.4.exe)  
-### [Vanilla Palettes Edition] (https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/v1.41/Project.Base.Randomizer.v1.4.-.Vanilla.Palettes.exe) for Project Base 0.7.2 Randomizer v1.4
+# Downloads v1.4: [Project Base 0.7.2 Randomizer v1.5](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1.5/SMPB.Item.Randomizer.v1.5.exe)  
+### [Vanilla Palettes Edition](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1.5a/SMPB.Item.Randomizer.v1.5.-.Vanilla.Palettes.exe) for Project Base 0.7.2 Randomizer v1.5
 
 
 ----------------------------------------------  
@@ -10,6 +10,11 @@ It's a fork from Dessy's original Super Metroid Randomizer program, that can be 
 
 ----------------------------------------------
 # Project Base 0.7.2 Randomizer Changelog
+
+v1.5
+
+	Fixed an unrandomized item at Wrecked Ship Attic location.
+	Updated tile graphics for a certain item.
 
 v1.4
 
