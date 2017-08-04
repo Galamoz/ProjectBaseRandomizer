@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using SuperMetroidRandomizer.IO;
 using SuperMetroidRandomizer.Net;
@@ -15,6 +15,7 @@ namespace SuperMetroidRandomizer.Random
         Casual,
         Speedrunner,
         Masochist,
+        FunTime,
         Insane,
     }
 
@@ -69,7 +70,7 @@ namespace SuperMetroidRandomizer.Random
             			//For the vanilla palettes version
 
            
-             rom.Write(Resources.RomImage072, 0, 3211264);
+             rom.Write(Resources.RomImage072B, 0, 3211264);
 
 				
                 foreach (var location in romLocations.Locations)
@@ -113,7 +114,7 @@ namespace SuperMetroidRandomizer.Random
                         // we have 4 copies of charge to reduce tedium, give them all the same index
                         //I chose to remove this for now to make it a bit more obvious that there aren't mistakes in the randomizing process
                         rom.Seek(location.Address + 4, SeekOrigin.Begin);
-                       rom.Write(StringToByteArray("\xff"), 0, 1);
+                       rom.Write(StringToByteArray("\xfa"), 0, 1);
                     }
                 }
 
