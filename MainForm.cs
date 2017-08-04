@@ -60,7 +60,7 @@ namespace SuperMetroidRandomizer
         {
             filenameV11.Text = Settings.Default.OutputFileV11;
             createSpoilerLog.Checked = Settings.Default.CreateSpoilerLog;
-            Text = string.Format("Super Metroid: Project Base Randomizer: v1.4", RandomizerVersion.CurrentDisplay);
+            Text = string.Format("Super Metroid: Project Base Randomizer: v2", RandomizerVersion.CurrentDisplay);
             randomizerDifficulty.SelectedItem = Settings.Default.RandomizerDifficulty;
             RunCheckUpdate();
         }
