@@ -1,6 +1,6 @@
 # Project Base Randomizer
-# Downloads v1.4: [Project Base 0.7.2 Randomizer v1.4](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/v1.4/Project.Base.Randomizer.v1.4.exe)  
-### [Vanilla Palettes Edition](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/v1.41/Project.Base.Randomizer.v1.4.-.Vanilla.Palettes.exe) for Project Base 0.7.2 Randomizer v1.4
+# Downloads v2: [Project Base 0.7.2 Randomizer v2](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/2.0/SMPB.Item.Randomizer.v2.0.exe)  
+### [Vanilla Palettes Edition](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/2.0a/SMPB.Item.Randomizer.v2.0.-Vanilla.Palettes.exe) for Project Base 0.7.2 Randomizer v2
 
 
 ----------------------------------------------  
@@ -11,10 +11,17 @@ It's a fork from Dessy's original Super Metroid Randomizer program, that can be 
 ----------------------------------------------
 # Project Base 0.7.2 Randomizer Changelog
 
+v2.0
+
+	Removed Ceres introduction.
+	Updated Map design for convenience. More details at: http://imgur.com/a/LsOun
+	Removed Item in Wrecked Ship Attic until Phantoon is defeated.
+	Fixed a bug where Brinstar Map Missiles were on the same item index as Charge Beam.
+	
 v1.4
 
 	**Bug** Item in Wrecked Ship Attic does not randomize properly until Phantoon is defeated.
-	Fix a specific crash that occured during the Spazer room's room transition.
+	Fixed a specific crash that occured during the Spazer room's room transition.
 	Improved item randomizing logic.
 	Reduced items available in Masochist difficulty to 25 from 29.
 	Reduced items available in Speedrunner difficulty to 47 from 52.
