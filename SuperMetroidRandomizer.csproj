@@ -70,10 +70,10 @@
     <Compile Include="Random\RandomizerV11.cs" />
     <Compile Include="Rom\RomLocationsFactory.cs" />
     <Compile Include="Rom\RomLocationsInsane.cs" />
-    <Compile Include="Rom\RomLocationsSpeedrunner.cs" />
     <Compile Include="Rom\RomLocationsCasual.cs" />
     <Compile Include="Rom\RomLocationsMasochist.cs" />
     <Compile Include="Random\SeedRandom.cs" />
+    <Compile Include="Rom\RomLocationsSpeedrunner.cs" />
     <EmbeddedResource Include="Controls.resx">
       <DependentUpon>Controls.cs</DependentUpon>
     </EmbeddedResource>
@@ -100,8 +100,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="sm.sfc" />
-    <None Include="smv11.sfc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MenuFileSaveIcon.png" />

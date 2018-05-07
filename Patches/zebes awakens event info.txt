@@ -1,0 +1,17 @@
+added events to 2 areas as FF E0
+
+event data at 7FFE0
+
+AD A2 09 29 0C 20 D0 0C AD C8 09 D0 07 AD CC 09 D0 02 F0 07 BD 00 00 AA 4C E6 E5 E8 E8 60
+
+seems to overlap with existing data
+
+
+
+
+-----
+
+change to FC 90 -- 92 FC for game purpose
+store at 7FC92
+
+79767 + 797C0
