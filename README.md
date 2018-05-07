@@ -1,6 +1,5 @@
-# Project Base Randomizer
-# Downloads v2: [Project Base 0.7.2 Randomizer v2](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/2.0/SMPB.Item.Randomizer.v2.0.exe)  
-### [Vanilla Palettes Edition](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/2.0a/SMPB.Item.Randomizer.v2.0.-Vanilla.Palettes.exe) for Project Base 0.7.2 Randomizer v2
+# Project Base Item Randomizer for 0.7.3
+# Latest Download: [Project Base 0.7.3 Item Randomizer v1.0](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1/SMPB073.Item.Randomizer.exe)
 
 
 ----------------------------------------------  
@@ -9,7 +8,23 @@ An Item Randomizer program for the Super Metroid Romhack called Project Base.
 It's a fork from Dessy's original Super Metroid Randomizer program, that can be found here: https://github.com/Dessyreqt/smrandomizer
 # HUGE THANKS TO DESSY, YOU ARE AWESOME
 ----------------------------------------------
-# Project Base 0.7.2 Randomizer Changelog
+#### Old Dowloads
+#### Project Base 0.7.2 Item Randomizer Download
+##### [Project Base 0.7.2 Randomizer](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/2.0/SMPB.Item.Randomizer.v2.0.exe)  
+##### [Vanilla Palettes Edition](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/2.0a/SMPB.Item.Randomizer.v2.0.-Vanilla.Palettes.exe)
+
+## Project Base 0.7.3 Item Randomizer Changelog
+
+v1.0
+
+	Public Release.
+	Item sounds reverted back to normal.
+	Updated Item Addresses and Item Logic for the updated map.
+	Removed Spore Spawn green door to prevent potential softlocks.
+	Wrecked Ship Attic item is removed until Phantoon is defeated.
+
+
+## Project Base 0.7.2 Item Randomizer Changelog
 
 v2.0
 
