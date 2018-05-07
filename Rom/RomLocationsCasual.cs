@@ -28,7 +28,9 @@ namespace SuperMetroidRandomizer.Rom
                                    GravityOkay = false,  
                                    Region = Region.Crateria,
                                    Name = "Power Bomb (Crateria surface)",
-                                   Address = 0x781CC,
+                                   //Address = 0x781CC,
+                                   //SMPB 0.7.2 address
+                                   Address = 0x781D4,
                                    CanAccess =
                                        have =>
 									CanUsePowerBombs(have)
@@ -70,6 +72,7 @@ namespace SuperMetroidRandomizer.Rom
                                    CanAccess =
                                        have => 
                                     CanAccessWs(have),
+										//needs morph as well in case of supers only
                                },
                            new Location
                                {        
@@ -106,6 +109,8 @@ namespace SuperMetroidRandomizer.Rom
                                        have =>
                                        CanOpenMissileDoors(have)
 									   && have.Contains(ItemType.MorphingBall),
+											//it might be important to consider casual players who cant alcatraz
+											//maybe change the bomb blocks to shot blocks, with visual indication?
                                },
                            new Location
                                {     
@@ -132,6 +137,7 @@ namespace SuperMetroidRandomizer.Rom
                                    	&& (have.Contains(ItemType.Bomb)
         	            || have.Contains(ItemType.PowerBomb)
         	            || have.Contains(ItemType.ScrewAttack)),
+										//CanEnterPassages || morph+screw
                                },
                            new Location
                                {       
@@ -144,6 +150,7 @@ namespace SuperMetroidRandomizer.Rom
                                        have =>
                                        CanEnterAndLeaveGauntlet(have)
                                    	&& EnergyReserveCount(have) >= 1,
+											//now possible to get in from underneath, just need morph
                                },
                            new Location
                                {     
@@ -303,8 +310,7 @@ namespace SuperMetroidRandomizer.Rom
                                        have =>
                                        CanAccessPinkBrinstar(have)
                                    	&& (have.Contains(ItemType.GrappleBeam)
-                                   	|| have.Contains(ItemType.SpaceJump)
-                                   	|| have.Contains(ItemType.SpeedBooster)),
+                                   	|| have.Contains(ItemType.SpaceJump)),
                                    //Speedrunner has none of the 3
                                },
                            new Location
@@ -342,8 +348,7 @@ namespace SuperMetroidRandomizer.Rom
                                        CanAccessPinkBrinstar(have)
                                    	&& CanUsePowerBombs(have)
                                    	&& (have.Contains(ItemType.GrappleBeam)
-                                   	|| have.Contains(ItemType.SpaceJump)
-                                   	|| have.Contains(ItemType.SpeedBooster)),
+                                   	|| have.Contains(ItemType.SpaceJump)),
                               },
                            new Location
                                {           
@@ -364,19 +369,22 @@ namespace SuperMetroidRandomizer.Rom
                                    Region = Region.Brinstar,
 								   //This slot changes according to what can and can't be obtained in the randomizer.
                                    Name = "Morphing Ball",   						   
-                                   Address = 0x786DE,
+                                   //Address = 0x786DE,
+                                   //0.7.2 Address
+                                   Address = 0x7867E,
                                    CanAccess = 
                                        have => 
                                    	true,
                                },
                            new Location
                                {              
-                                   NoHidden = true,	//ok
-                                   //item appears after roomstate changes
+                                   NoHidden = true,
                                    GravityOkay = false,      
                                    Region = Region.Brinstar,
                                    Name = "Power Bomb (Blue Brinstar)",
-                                   Address = 0x7874C,
+                                   //Address = 0x7874C,
+                                   //0.7.2 Address
+                                   Address = 0x78684,
                                    CanAccess =
                                        have => 
                                    	CanUsePowerBombs(have),
@@ -391,8 +399,10 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x7EBB8,
                                    CanAccess =
                                        have =>
-                                       CanOpenMissileDoors(have)
-									   && have.Contains(ItemType.MorphingBall),
+                                       //CanOpenMissileDoors(have)
+                                   	//for some reason, the door is blue instead of red
+                                   	//might have to do with the door flag patch
+									   have.Contains(ItemType.MorphingBall),
                                },
                            new Location
                                {            
@@ -468,7 +478,6 @@ namespace SuperMetroidRandomizer.Rom
                                    CanAccess =
                                        have =>
                                        CanUsePowerBombs(have)
-									   && have.Contains(ItemType.WaveBeam)
                                    	&& CanAccessPinkBrinstar(have),
                                },
                            new Location
@@ -483,8 +492,7 @@ namespace SuperMetroidRandomizer.Rom
                                        have =>
                                    	CanOpenMissileDoors(have)
                                    	&& (have.Contains(ItemType.ScrewAttack)
-                                   	&& (have.Contains(ItemType.HiJumpBoots)
-                                   	        || have.Contains(ItemType.SpaceJump))),
+                                   	&& have.Contains(ItemType.SpaceJump)),
                                },
                            new Location
                                {           
@@ -505,8 +513,10 @@ namespace SuperMetroidRandomizer.Rom
                                    GravityOkay = false,      
                                    Region = Region.RedBrinstar,
                                    Name = "X-Ray Visor",
-                                   Address = 0x78876,
-                                   ItemStorageType = ItemStorageType.Chozo,
+                                   //Address = 0x78876,
+                                   //0.7.2 Address
+                                   Address = 0x7FFD1,
+                                   //ItemStorageType = ItemStorageType.Chozo,
                                    CanAccess =
                                        have =>
                                    	(CanAccessPinkBrinstar(have)
@@ -528,6 +538,7 @@ namespace SuperMetroidRandomizer.Rom
                                    CanAccess =
                                        have =>
                                        CanAccessRedBrinstar(have)
+									   && have.Contains(ItemType.SuperMissile)
 									   && CanUsePowerBombs(have),
                                },
                            new Location
@@ -540,7 +551,8 @@ namespace SuperMetroidRandomizer.Rom
                                    ItemStorageType = ItemStorageType.Chozo,
                                    CanAccess =
                                        have =>
-                                       CanAccessRedBrinstar(have),
+                                       CanAccessRedBrinstar(have)
+									   && have.Contains(ItemType.SuperMissile),
                                },
                            new Location
                                {              
@@ -563,7 +575,8 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x7896E,
                                    CanAccess =
                                        have =>
-                                   	CanAccessRedBrinstar(have),
+                                   	CanAccessRedBrinstar(have)
+									&& have.Contains(ItemType.SuperMissile),
                                },
                            new Location
                                {           
@@ -575,7 +588,9 @@ namespace SuperMetroidRandomizer.Rom
                                    //Address = 0x7FC8A, --> Project Base Address, causes crash upon entering Kraid's Lair
                                    //Address = 0x7899C,
                                    //Address = 0x7FC66, --> scroll plm
-                                   Address = 0x7FC8A,
+                                   //Address = 0x7FC8A,
+                                   //0.7.2 address
+                                   Address = 0x7FC7E,
                                    //does not randomize
                                    ItemStorageType = ItemStorageType.Chozo,
                                    CanAccess =
@@ -655,7 +670,9 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x78B24,
                                    CanAccess =
                                        have =>
-                                   	CanAccessIceBeam(have),
+                                   	CanAccessIceBeam(have)
+									|| CanAccessIceBeam(have)
+									&& have.Contains(ItemType.SuperMissile),
                                    //short hellrun
                                },
                            new Location
@@ -766,7 +783,10 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x78BA4,
                                    CanAccess =
                                        have =>
-                                   	CanAccessCrocomire(have), //crocomire etank is replaced by missiles
+                                   	CanAccessCrocomire(have)
+									&& (have.Contains(ItemType.SpeedBooster)
+                                   	|| have.Contains(ItemType.GrappleBeam)
+                                   	|| have.Contains(ItemType.SpaceJump)), //crocomire etank is replaced by missiles
                                },
                            new Location
                                {                   
@@ -796,7 +816,7 @@ namespace SuperMetroidRandomizer.Rom
                                    Name = "Grapple Beam",
 								   //0x78C36
                                    Address = 0x7EFA0,
-                                   ItemStorageType = ItemStorageType.Chozo,
+                                   //ItemStorageType = ItemStorageType.Chozo,
                                    CanAccess =
                                        have =>
                                        ((CanAccessIceBeam(have)
@@ -815,7 +835,9 @@ namespace SuperMetroidRandomizer.Rom
                                    ItemStorageType = ItemStorageType.Chozo,
                                    CanAccess =
                                        have =>
-                                   	CanAccessHeatedNorfair(have),
+                                   	CanAccessHeatedNorfair(have)
+									&& have.Contains(ItemType.SuperMissile)
+									&& have.Contains(ItemType.GrappleBeam),
                                },
                            new Location
                                {                  
@@ -827,7 +849,9 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x7F642,
                                    CanAccess =
                                        have =>
-                                       CanAccessHeatedNorfair(have),
+                                   	CanAccessHeatedNorfair(have)
+									&& have.Contains(ItemType.SuperMissile)
+									&& have.Contains(ItemType.GrappleBeam),
                                },
                            new Location
                                {                 
@@ -839,7 +863,9 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x7F63C,
                                    CanAccess =
                                        have =>
-                                       CanAccessHeatedNorfair(have),
+                                   	CanAccessHeatedNorfair(have)
+									&& have.Contains(ItemType.SuperMissile)
+									&& have.Contains(ItemType.GrappleBeam),
                                },
                            new Location
                                {                       
@@ -877,6 +903,7 @@ namespace SuperMetroidRandomizer.Rom
                                    CanAccess =
                                        have =>
                                    	(CanAccessHeatedNorfair(have)//2 main routes to speedboost, kraid backdoor or business center
+									&& CanOpenMissileDoors(have)
                                    	|| (CanAccessHeatedNorfair(have)
                                    	     && CanUsePowerBombs(have))),
                                },
@@ -904,6 +931,7 @@ namespace SuperMetroidRandomizer.Rom
                                    CanAccess =
                                        have =>
                                    	CanAccessHeatedNorfair(have)
+									&& CanOpenMissileDoors(have)
                                    	&& (have.Contains(ItemType.SpeedBooster)
                                    	|| have.Contains(ItemType.GrappleBeam)
                                    	|| have.Contains(ItemType.SpaceJump)), //speedrunners won't need any of these
@@ -1031,7 +1059,10 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x79184,
                                    CanAccess =
                                        have =>
-                                       CanAccessLowerNorfair(have),
+                                       CanAccessLowerNorfair(have)
+									   && have.Contains(ItemType.SuperMissile)
+									   && have.Contains(ItemType.SpaceJump)
+									   && have.Contains(ItemType.IceBeam),
                                },
                            new Location
                                {                         
@@ -1133,7 +1164,8 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x7C337,
                                    CanAccess =
                                        have => 
-                                       CanAccessWs(have),
+                                       CanAccessWs(have)
+									   && have.Contains(ItemType.GrappleBeam),
                                },
                            new Location
                                {                            
@@ -1208,7 +1240,6 @@ namespace SuperMetroidRandomizer.Rom
                                    CanAccess =
                                        have =>
                                    	CanAccessRedBrinstar(have)
-                                   	&& CanUsePowerBombs(have)
                                    	&& have.Contains(ItemType.GravitySuit)
                                    	&& have.Contains(ItemType.SpeedBooster),
                                    	
@@ -1222,8 +1253,7 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x7C43D,
                                    CanAccess =
                                    		have =>
-                                   	CanAccessMaridiaCasual(have)
-                                   	&& CanUsePowerBombs(have),
+                                   	CanAccessMaridiaCasual(have),
                                        
                                },
                            new Location
@@ -1299,9 +1329,7 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x7C559,
                                    CanAccess =
                                        have =>
-                                       CanAccessMaridiaCasual(have)
-                                   	&& have.Contains(ItemType.ChargeBeam)
-                                   	&& have.Contains(ItemType.SpeedBooster),
+                                       CanAccessMaridiaCasual(have),
                                },
                            new Location
                                {                             
@@ -1404,7 +1432,8 @@ namespace SuperMetroidRandomizer.Rom
                                    ItemStorageType = ItemStorageType.Hidden,
                                    CanAccess =
                                        have =>
-                                       CanAccessAquaductCasual(have),
+                                       CanAccessAquaductCasual(have)
+									   && have.Contains(ItemType.GrappleBeam),
                                },
                            new Location
                                {                             
@@ -1432,7 +1461,8 @@ namespace SuperMetroidRandomizer.Rom
                                    Address = 0x7C791,
                                    CanAccess =
                                        have =>
-                                       CanAccessAquaductCasual(have),
+                                       CanAccessAquaductCasual(have)
+									   && have.Contains(ItemType.GrappleBeam),
                                },
 							   new Location
                                {                             
@@ -1441,7 +1471,7 @@ namespace SuperMetroidRandomizer.Rom
                                    Region = Region.Maridia,
 								   //Map Missiles #4
                                    Name = "Missile (Maridia Map Station Missiles - Corridor)",
-                                   Address = 0x7C581,
+                                   Address = 0x7C4B1,
                                    CanAccess =
                                        have =>
                                    	CanAccessRedBrinstar(have),
@@ -1510,29 +1540,41 @@ namespace SuperMetroidRandomizer.Rom
 		private static bool CanAccessRedBrinstar(List<ItemType> have)
 		{
 			//3 possible routes to enter Red Brinstar
-			//Every scenario to get into Red Brinstar should require at least super missiles.
 			return (have.Contains(ItemType.SuperMissile)
 			        && CanUsePowerBombs(have))
-				|| (have.Contains(ItemType.SuperMissile)
-				    && have.Contains(ItemType.MorphingBall))
-				|| (CanEnterPassages(have)
-				    && have.Contains(ItemType.SuperMissile));
+							//Rightside blue brinstar now has yellow door instead of green
+				|| CanUsePowerBombs(have)
+							//backway to xray is now yellow door instead of green
+				|| CanUsePowerBombs(have)
+				    && have.Contains(ItemType.GrappleBeam);
 		}		
 		private static bool CanAccessGreenBrinstar(List<ItemType> have)
 		{
-			//3 possible routes to enter Green Brinstar
-			return CanEnterPassages(have) //cannot have circular arguments-list individual items
+			//5 possible routes to enter Green Brinstar
+						//Intended entrance
+			return CanEnterPassages(have) 
+						//From Red Tower
 				|| (CanUsePowerBombs(have)
+				&& have.Contains(ItemType.SuperMissile)) 
+						//From under first missiles leading to big pink
+				|| (CanEnterPassages(have) 
 				&& have.Contains(ItemType.SuperMissile))
-				|| (have.Contains(ItemType.MorphingBall)
-				&& have.Contains (ItemType.SuperMissile));
+						//Right side blue brinstar leading to red tower
+				|| (CanOpenMissileDoors(have)
+				&& CanUsePowerBombs(have)); 
+						//another entrance near morph ball
+				
 		}
 		private static bool CanAccessPinkBrinstar(List<ItemType> have)
 		{
 			//3 possible routes to enter Pink Brinstar
+					//From under first missiles
 			return CanEnterPassages(have)
+				&& have.Contains(ItemType.SuperMissile)
+					//Any of the 5 ways to access green brinstar
 				|| (CanAccessGreenBrinstar(have)
 				&& CanOpenMissileDoors(have))
+					//any of the 3 ways to access red brinstar
 				|| CanAccessRedBrinstar(have);
 		}			        
 		
@@ -1540,6 +1582,7 @@ namespace SuperMetroidRandomizer.Rom
 		{
 			return CanAccessRedBrinstar(have)
 				&& CanEnterPassages(have)
+				&& CanOpenMissileDoors(have)
 				&& EnergyReserveCount(have) >= 3;
 		}
 		
@@ -1556,7 +1599,8 @@ namespace SuperMetroidRandomizer.Rom
 		}	
 		private static bool CanAccessCrocomire(List<ItemType> have)
 		{
-			return CanAccessHeatedNorfair(have);
+			return CanAccessHeatedNorfair(have)
+					&& have.Contains(ItemType.SuperMissile);
 		}	
 		private static bool CanAccessLowerNorfair(List<ItemType> have)
 		{
@@ -1571,7 +1615,8 @@ namespace SuperMetroidRandomizer.Rom
 		{
 			return CanAccessRedBrinstar(have)
 				&& have.Contains(ItemType.GravitySuit)
-				&& EnergyReserveCount(have) >= 8;
+				&& EnergyReserveCount(have) >= 8
+				&& CanUsePowerBombs(have);
 		}	
 		
 		private static bool CanAccessAquaductCasual(List<ItemType> have)
@@ -1592,7 +1637,6 @@ namespace SuperMetroidRandomizer.Rom
 		private static bool CanMeetEtecoons(List<ItemType> have)
 		{
 			return CanAccessGreenBrinstar(have)
-				&& CanDestroyBombBlocks(have)
 				&& CanUsePowerBombs(have);
 		}	
         public RomLocationsCasual()
@@ -1760,7 +1804,7 @@ namespace SuperMetroidRandomizer.Rom
                            ItemType.EnergyTank,
                            ItemType.EnergyTank,
                            ItemType.EnergyTank,
-                           //100%
+                           //104%
                        };
         }
     }
