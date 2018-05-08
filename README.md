@@ -1,5 +1,5 @@
 # Project Base Item Randomizer for 0.7.3
-# Latest Download: [Project Base 0.7.3 Item Randomizer v1.0](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1/SMPB073.Item.Randomizer.exe)
+# Latest Download: [Project Base 0.7.3 Item Randomizer v1.01](https://github.com/Galamoz/ProjectBaseRandomizer/releases/download/1.01/SMPB.Rando.for.073.v1.01.exe)
 
 
 ----------------------------------------------  
