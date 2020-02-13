@@ -103,6 +103,10 @@ namespace SuperMetroidRandomizer
                 MessageBox.Show("Seed must be numeric or blank.", "Seed Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 WriteOutputV11("Seed must be numeric or blank.");
             }
+            else if(String.IsNullOrWhiteSpace(tbBaseRomPath.Text))
+            {
+                MessageBox.Show("Must select a base ROM.", "Base ROM not selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 var romLocations = RomLocationsFactory.GetRomLocations(difficulty);
@@ -115,7 +119,7 @@ namespace SuperMetroidRandomizer
 
                 seedV11.Text = string.Format(romLocations.SeedFileString, parsedSeed);
                 var randomizerV11 = new RandomizerV11(parsedSeed, romLocations, log);
-                randomizerV11.CreateRom(filenameV11.Text);
+                randomizerV11.CreateRom(filenameV11.Text, tbBaseRomPath.Text);
 
                 var outputString = new StringBuilder();
 
@@ -136,6 +140,10 @@ namespace SuperMetroidRandomizer
                 MessageBox.Show("Seed must be numeric or blank.", "Seed Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 WriteOutputV11("Seed must be numeric or blank.");
             }
+            else if(String.IsNullOrWhiteSpace(tbBaseRomPath.Text))
+            {
+                MessageBox.Show("Must select a base ROM.", "Base ROM not selected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 var romPlms = RomLocationsFactory.GetRomLocations(difficulty);
@@ -144,7 +152,7 @@ namespace SuperMetroidRandomizer
                 seedV11.Text = string.Format(romPlms.SeedFileString, parsedSeed);
 
                 var randomizer = new RandomizerV11(parsedSeed, romPlms, log);
-                WriteOutputV11(randomizer.CreateRom(filenameV11.Text, true));
+                WriteOutputV11(randomizer.CreateRom(filenameV11.Text, tbBaseRomPath.Text, true));
             }
      
 	
@@ -292,14 +300,14 @@ namespace SuperMetroidRandomizer
 	
 		}
 
+        private void bBrowseBaseRomPath_Click(object sender, EventArgs e)
+        {
+            var saveFileDialog = new OpenFileDialog { Filter = "All files (*.*)|*.*" };
 
-			
-	
-			
-			
-		
-		
-	
-		
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                tbBaseRomPath.Text = saveFileDialog.FileName;
+            }
+        }
     }
 }

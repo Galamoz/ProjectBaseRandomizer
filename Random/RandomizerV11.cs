@@ -37,7 +37,7 @@ namespace SuperMetroidRandomizer.Random
             this.log = log;
         }
 
-        public string CreateRom(string filename, bool spoilerOnly = false)
+        public string CreateRom(string filename, string baseRomPath, bool spoilerOnly = false)
         {
             if (filename.Contains("\\") && !Directory.Exists(filename.Substring(0, filename.LastIndexOf('\\'))))
             {
@@ -46,19 +46,19 @@ namespace SuperMetroidRandomizer.Random
 
             GenerateItemList();
             GenerateItemPositions();
-            WriteRom(filename);
+            WriteRom(filename, baseRomPath);
 
             if (spoilerOnly)
             {
                 return log.GetLogOutput();
             }
 
-            WriteRom(filename);
+            WriteRom(filename, baseRomPath);
 
             return "";
         }
 
-        private void WriteRom(string filename)
+        private void WriteRom(string filename, string baseRomPath)
         {
             string usedFilename = FileName.Fix(filename, string.Format(romLocations.SeedFileString, seed));
             var hideLocations = !(romLocations is RomLocationsCasual);
@@ -66,12 +66,13 @@ namespace SuperMetroidRandomizer.Random
             using (var rom = new FileStream(usedFilename, FileMode.OpenOrCreate))
             {
 
-            			//rom.Write(Resources.RomImageSMPB072VP, 0, 3211264);
-            			//For the vanilla palettes version
+                //rom.Write(Resources.RomImageSMPB072VP, 0, 3211264);
+                //For the vanilla palettes version
 
-           
-             rom.Write(Resources.RomImage072B, 0, 3211264);
-
+                using(var baseRom = new FileStream(baseRomPath, FileMode.Open))
+                {
+                    baseRom.CopyTo(rom);
+                }
 				
                 foreach (var location in romLocations.Locations)
                 {

@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 # SharpDevelop 5.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperMetroidRandomizer", "SuperMetroidRandomizer\SuperMetroidRandomizer.csproj", "{AC965D93-99D7-4679-95D3-2A84025C4341}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperMetroidRandomizer", "SuperMetroidRandomizer.csproj", "{AC965D93-99D7-4679-95D3-2A84025C4341}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
