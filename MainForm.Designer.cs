@@ -30,6 +30,10 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.openDirBtn = new System.Windows.Forms.Button();
+            this.bBrowseBaseRomPath = new System.Windows.Forms.Button();
+            this.tbBaseRomPath = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.randomSpoiler = new System.Windows.Forms.Button();
             this.report = new System.Windows.Forms.Button();
             this.createSpoilerLog = new System.Windows.Forms.CheckBox();
@@ -43,9 +47,6 @@
             this.createV11 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.filenameV11 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbBaseRomPath = new System.Windows.Forms.TextBox();
-            this.bBrowseBaseRomPath = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -58,7 +59,7 @@
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(0, 2);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(712, 459);
@@ -66,6 +67,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.openDirBtn);
             this.tabPage1.Controls.Add(this.bBrowseBaseRomPath);
             this.tabPage1.Controls.Add(this.tbBaseRomPath);
             this.tabPage1.Controls.Add(this.label1);
@@ -83,19 +85,63 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.filenameV11);
             this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(704, 427);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Project Base 0.7.2 Randomizer";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // openDirBtn
+            // 
+            this.openDirBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.openDirBtn.Location = new System.Drawing.Point(593, 101);
+            this.openDirBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.openDirBtn.Name = "openDirBtn";
+            this.openDirBtn.Size = new System.Drawing.Size(59, 31);
+            this.openDirBtn.TabIndex = 39;
+            this.openDirBtn.Text = "Open";
+            this.openDirBtn.UseVisualStyleBackColor = true;
+            this.openDirBtn.Click += new System.EventHandler(this.openDirBtn_Click);
+            // 
+            // bBrowseBaseRomPath
+            // 
+            this.bBrowseBaseRomPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bBrowseBaseRomPath.Image = global::SuperMetroidRandomizer.Properties.Resources.MenuFileSaveIcon;
+            this.bBrowseBaseRomPath.Location = new System.Drawing.Point(659, 149);
+            this.bBrowseBaseRomPath.Margin = new System.Windows.Forms.Padding(4);
+            this.bBrowseBaseRomPath.Name = "bBrowseBaseRomPath";
+            this.bBrowseBaseRomPath.Size = new System.Drawing.Size(33, 31);
+            this.bBrowseBaseRomPath.TabIndex = 38;
+            this.bBrowseBaseRomPath.UseVisualStyleBackColor = true;
+            this.bBrowseBaseRomPath.Click += new System.EventHandler(this.bBrowseBaseRomPath_Click);
+            // 
+            // tbBaseRomPath
+            // 
+            this.tbBaseRomPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbBaseRomPath.Location = new System.Drawing.Point(8, 153);
+            this.tbBaseRomPath.Margin = new System.Windows.Forms.Padding(4);
+            this.tbBaseRomPath.Name = "tbBaseRomPath";
+            this.tbBaseRomPath.Size = new System.Drawing.Size(643, 22);
+            this.tbBaseRomPath.TabIndex = 37;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 131);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Base ROM";
+            // 
             // randomSpoiler
             // 
             this.randomSpoiler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.randomSpoiler.Location = new System.Drawing.Point(11, 388);
-            this.randomSpoiler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.randomSpoiler.Margin = new System.Windows.Forms.Padding(4);
             this.randomSpoiler.Name = "randomSpoiler";
             this.randomSpoiler.Size = new System.Drawing.Size(133, 28);
             this.randomSpoiler.TabIndex = 35;
@@ -107,7 +153,7 @@
             // 
             this.report.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.report.Location = new System.Drawing.Point(571, 388);
-            this.report.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.report.Margin = new System.Windows.Forms.Padding(4);
             this.report.Name = "report";
             this.report.Size = new System.Drawing.Size(123, 28);
             this.report.TabIndex = 22;
@@ -119,7 +165,7 @@
             // 
             this.createSpoilerLog.AutoSize = true;
             this.createSpoilerLog.Location = new System.Drawing.Point(256, 9);
-            this.createSpoilerLog.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createSpoilerLog.Margin = new System.Windows.Forms.Padding(4);
             this.createSpoilerLog.Name = "createSpoilerLog";
             this.createSpoilerLog.Size = new System.Drawing.Size(148, 21);
             this.createSpoilerLog.TabIndex = 21;
@@ -145,7 +191,7 @@
             "Speedrunner",
             "Masochist"});
             this.randomizerDifficulty.Location = new System.Drawing.Point(85, 7);
-            this.randomizerDifficulty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.randomizerDifficulty.Margin = new System.Windows.Forms.Padding(4);
             this.randomizerDifficulty.Name = "randomizerDifficulty";
             this.randomizerDifficulty.Size = new System.Drawing.Size(160, 24);
             this.randomizerDifficulty.TabIndex = 19;
@@ -154,7 +200,7 @@
             // 
             this.controlsV11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.controlsV11.Location = new System.Drawing.Point(485, 21);
-            this.controlsV11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.controlsV11.Margin = new System.Windows.Forms.Padding(4);
             this.controlsV11.Name = "controlsV11";
             this.controlsV11.Size = new System.Drawing.Size(100, 28);
             this.controlsV11.TabIndex = 18;
@@ -168,7 +214,7 @@
             this.browseV11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.browseV11.Image = global::SuperMetroidRandomizer.Properties.Resources.MenuFileSaveIcon;
             this.browseV11.Location = new System.Drawing.Point(660, 101);
-            this.browseV11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.browseV11.Margin = new System.Windows.Forms.Padding(4);
             this.browseV11.Name = "browseV11";
             this.browseV11.Size = new System.Drawing.Size(33, 31);
             this.browseV11.TabIndex = 15;
@@ -194,7 +240,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.outputV11.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputV11.Location = new System.Drawing.Point(8, 183);
-            this.outputV11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.outputV11.Margin = new System.Windows.Forms.Padding(4);
             this.outputV11.Multiline = true;
             this.outputV11.Name = "outputV11";
             this.outputV11.ReadOnly = true;
@@ -207,7 +253,7 @@
             this.seedV11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.seedV11.Location = new System.Drawing.Point(8, 57);
-            this.seedV11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.seedV11.Margin = new System.Windows.Forms.Padding(4);
             this.seedV11.Name = "seedV11";
             this.seedV11.Size = new System.Drawing.Size(684, 22);
             this.seedV11.TabIndex = 16;
@@ -216,7 +262,7 @@
             // 
             this.createV11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.createV11.Location = new System.Drawing.Point(593, 21);
-            this.createV11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.createV11.Margin = new System.Windows.Forms.Padding(4);
             this.createV11.Name = "createV11";
             this.createV11.Size = new System.Drawing.Size(100, 28);
             this.createV11.TabIndex = 11;
@@ -240,45 +286,13 @@
             this.filenameV11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.filenameV11.Location = new System.Drawing.Point(8, 105);
-            this.filenameV11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.filenameV11.Margin = new System.Windows.Forms.Padding(4);
             this.filenameV11.Name = "filenameV11";
-            this.filenameV11.Size = new System.Drawing.Size(643, 22);
+            this.filenameV11.Size = new System.Drawing.Size(577, 22);
             this.filenameV11.TabIndex = 14;
-            this.filenameV11.Text = "SMPB Random <seed>.sfc";
+            this.filenameV11.Text = "Output\\SMPB Random <seed>.sfc";
             this.filenameV11.TextChanged += new System.EventHandler(this.filenameV11_TextChanged);
             this.filenameV11.Leave += new System.EventHandler(this.filename_Leave);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 131);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Base ROM";
-            // 
-            // tbBaseRomPath
-            // 
-            this.tbBaseRomPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbBaseRomPath.Location = new System.Drawing.Point(8, 153);
-            this.tbBaseRomPath.Margin = new System.Windows.Forms.Padding(4);
-            this.tbBaseRomPath.Name = "tbBaseRomPath";
-            this.tbBaseRomPath.Size = new System.Drawing.Size(643, 22);
-            this.tbBaseRomPath.TabIndex = 37;
-            // 
-            // bBrowseBaseRomPath
-            // 
-            this.bBrowseBaseRomPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bBrowseBaseRomPath.Image = global::SuperMetroidRandomizer.Properties.Resources.MenuFileSaveIcon;
-            this.bBrowseBaseRomPath.Location = new System.Drawing.Point(659, 149);
-            this.bBrowseBaseRomPath.Margin = new System.Windows.Forms.Padding(4);
-            this.bBrowseBaseRomPath.Name = "bBrowseBaseRomPath";
-            this.bBrowseBaseRomPath.Size = new System.Drawing.Size(33, 31);
-            this.bBrowseBaseRomPath.TabIndex = 38;
-            this.bBrowseBaseRomPath.UseVisualStyleBackColor = true;
-            this.bBrowseBaseRomPath.Click += new System.EventHandler(this.bBrowseBaseRomPath_Click);
             // 
             // MainForm
             // 
@@ -286,7 +300,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 460);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Super Metroid Project Base Randomizer";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -317,6 +331,7 @@
         private System.Windows.Forms.Button bBrowseBaseRomPath;
         private System.Windows.Forms.TextBox tbBaseRomPath;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button openDirBtn;
     }
 }
 
