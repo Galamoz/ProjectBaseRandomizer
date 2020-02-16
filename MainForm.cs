@@ -1,15 +1,15 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Windows.Forms;
-using SuperMetroidRandomizer.IO;
+﻿using SuperMetroidRandomizer.IO;
 using SuperMetroidRandomizer.Net;
 using SuperMetroidRandomizer.Properties;
 using SuperMetroidRandomizer.Random;
 using SuperMetroidRandomizer.Rom;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace SuperMetroidRandomizer
 
@@ -308,6 +308,28 @@ namespace SuperMetroidRandomizer
             {
                 tbBaseRomPath.Text = saveFileDialog.FileName;
             }
+        }
+
+        /// <summary>
+        /// Open (in Explorer) the directory that the expected output will go to
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void openDirBtn_Click(object sender, EventArgs e)
+        {
+            string filePath = filenameV11.Text;
+            string directoryPath = ".\\";
+            if(filePath.Contains("\\"))
+            {
+                directoryPath = filePath.Substring(0, filePath.LastIndexOf('\\'));
+            }
+                
+            if(!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            Process.Start(directoryPath);
         }
     }
 }
