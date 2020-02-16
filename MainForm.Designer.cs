@@ -290,7 +290,7 @@
             this.filenameV11.Name = "filenameV11";
             this.filenameV11.Size = new System.Drawing.Size(577, 22);
             this.filenameV11.TabIndex = 14;
-            this.filenameV11.Text = "SMPB Random <seed>.sfc";
+            this.filenameV11.Text = "Output\\SMPB Random <seed>.sfc";
             this.filenameV11.TextChanged += new System.EventHandler(this.filenameV11_TextChanged);
             this.filenameV11.Leave += new System.EventHandler(this.filename_Leave);
             // 
