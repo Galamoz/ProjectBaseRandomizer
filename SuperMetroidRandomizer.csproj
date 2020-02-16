@@ -153,6 +153,10 @@
     </PropertyGroup>
     <Error Condition="!Exists('packages\patch-applier.0.0.2\build\patch-applier.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\patch-applier.0.0.2\build\patch-applier.targets'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>XCOPY "$(SolutionDir)Patches\*.ips" "$(TargetDir)\Patches\" /S /Y
+XCOPY "$(SolutionDir)Patches\*.asm" "$(TargetDir)\Patches\" /S /Y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
