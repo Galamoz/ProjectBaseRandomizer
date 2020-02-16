@@ -84,6 +84,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Net\RandomizerVersion.cs" />
+    <Compile Include="Patching\Patching.cs" />
     <Compile Include="Rom\Controller.cs" />
     <Compile Include="Controls.cs">
       <SubType>Form</SubType>

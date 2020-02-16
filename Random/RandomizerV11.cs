@@ -1,13 +1,18 @@
-using System.Collections.Generic;
-using System.IO;
+using patch_applier;
+using patch_applier.PatchFileDescription;
+using patch_manager.Patchers;
 using SuperMetroidRandomizer.IO;
 using SuperMetroidRandomizer.Net;
 using SuperMetroidRandomizer.Properties;
 using SuperMetroidRandomizer.Rom;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Web.Script.Serialization;
 
 namespace SuperMetroidRandomizer.Random
 {
-	
+
 
     public enum RandomizerDifficulty
     {
@@ -65,15 +70,11 @@ namespace SuperMetroidRandomizer.Random
 
             using (var rom = new FileStream(usedFilename, FileMode.OpenOrCreate))
             {
-
-                //rom.Write(Resources.RomImageSMPB072VP, 0, 3211264);
-                //For the vanilla palettes version
-
                 using(var baseRom = new FileStream(baseRomPath, FileMode.Open))
                 {
-                    baseRom.CopyTo(rom);
+                    Patching.Patching.Patch(baseRom, rom);
                 }
-				
+
                 foreach (var location in romLocations.Locations)
                 {
                     rom.Seek(location.Address, SeekOrigin.Begin);
