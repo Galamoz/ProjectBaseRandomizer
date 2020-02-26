@@ -4,10 +4,10 @@
 //                                   ItemStorageType = ItemStorageType.Hidden, {chozo,hidden, blank}
 
 
+using SuperMetroidRandomizer.Random;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SuperMetroidRandomizer.Random;
 
 namespace SuperMetroidRandomizer.Rom
 {

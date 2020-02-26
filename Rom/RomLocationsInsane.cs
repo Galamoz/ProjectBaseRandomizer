@@ -1,8 +1,7 @@
-﻿using System;
+﻿using SuperMetroidRandomizer.Random;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using SuperMetroidRandomizer.Random;
 
 namespace SuperMetroidRandomizer.Rom
 {

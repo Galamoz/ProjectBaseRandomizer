@@ -1,10 +1,8 @@
 ﻿using patch_applier;
-using patch_applier.PatchFileDescription;
 using patch_manager.Patchers;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web.Script.Serialization;
 
 namespace SuperMetroidRandomizer.Patching
 {
