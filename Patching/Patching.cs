@@ -10,22 +10,18 @@ namespace SuperMetroidRandomizer.Patching
 {
     public static class Patching
     {
-        public static void Patch(Stream baseRom, Stream outputFile)
+        /// <summary>
+        /// Patch a base rom with a given set of patches (passed as file paths).
+        /// </summary>
+        /// <param name="baseRom"></param>
+        /// <param name="outputFile"></param>
+        /// <param name="patchPaths">
+        ///     A list of filepaths to patchfiles.
+        ///     These paths must exist in the output directory.
+        ///     To achieve this, the `Patches` directory is currently copied during a post-build step.
+        /// </param>
+        public static void Patch(Stream baseRom, Stream outputFile, List<string> patchPaths)
         {
-            // These paths must exist in the output directory.
-            // To achieve this, the `Patches` directory is copied during a post-build step.
-            List<string> patchPaths = new List<string>
-            {
-                "Patches/Project Base 073.ips",
-                "Patches/Disable Suit Animation.IPS",
-                "Patches/Fix attic.IPS",
-                "Patches/introskip_doorflags.ips",
-                "Patches/JAMMorphingBallFix.IPS",
-                "Patches/spospo doorfix.IPS",
-                "Patches/Super Metroid Item Sounds.IPS",
-                "Patches/ZebesAwakens for SMPB073.IPS",
-            };
-
             var patchers = patchPaths.Select(path => PatcherFactory.CreatePatcher(path)).ToList();
             PatchApplier.Patch(patchers, baseRom, outputFile);
         }

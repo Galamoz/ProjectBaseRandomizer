@@ -12,6 +12,18 @@ namespace SuperMetroidRandomizer.Rom
         public string SeedFileString { get { return "M{0:0000000}"; } }
         public string SeedRomString { get { return "SMRv{0} M{1}"; } }
 
+        public List<string> PatchPaths => new List<string>
+        {
+            "Patches/Project Base 073.ips",
+            "Patches/Disable Suit Animation.IPS",
+            "Patches/Fix attic.IPS",
+            "Patches/introskip_doorflags.ips",
+            "Patches/JAMMorphingBallFix.IPS",
+            "Patches/spospo doorfix.IPS",
+            "Patches/Super Metroid Item Sounds.IPS",
+            "Patches/ZebesAwakens for SMPB073.IPS",
+        };
+
         public void ResetLocations()
         {
            Locations = new List<Location>

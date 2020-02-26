@@ -72,7 +72,7 @@ namespace SuperMetroidRandomizer.Random
             {
                 using(var baseRom = new FileStream(baseRomPath, FileMode.Open))
                 {
-                    Patching.Patching.Patch(baseRom, rom);
+                    Patching.Patching.Patch(baseRom, rom, romLocations.PatchPaths);
                 }
 
                 foreach (var location in romLocations.Locations)
