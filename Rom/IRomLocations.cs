@@ -9,6 +9,7 @@ namespace SuperMetroidRandomizer.Rom
         string DifficultyName { get; }
         string SeedFileString { get; }
         string SeedRomString { get; }
+        List<string> PatchPaths { get; }
 
         void ResetLocations();
         List<Location> GetAvailableLocations(List<ItemType> haveItems);

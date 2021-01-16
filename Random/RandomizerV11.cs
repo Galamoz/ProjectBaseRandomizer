@@ -1,14 +1,9 @@
-using patch_applier;
-using patch_applier.PatchFileDescription;
-using patch_manager.Patchers;
 using SuperMetroidRandomizer.IO;
 using SuperMetroidRandomizer.Net;
 using SuperMetroidRandomizer.Properties;
 using SuperMetroidRandomizer.Rom;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web.Script.Serialization;
 
 namespace SuperMetroidRandomizer.Random
 {
@@ -72,7 +67,7 @@ namespace SuperMetroidRandomizer.Random
             {
                 using(var baseRom = new FileStream(baseRomPath, FileMode.Open))
                 {
-                    Patching.Patching.Patch(baseRom, rom);
+                    Patching.Patching.Patch(baseRom, rom, romLocations.PatchPaths);
                 }
 
                 foreach (var location in romLocations.Locations)
